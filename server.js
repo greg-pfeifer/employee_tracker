@@ -2,6 +2,7 @@ const inquirer = require('inquirer')
 const db = require('./db/connection')
 const table = require('console.table')
 
+//Start inquirer prompts and funnel user responses through conditionals 
 function start() {
     inquirer.prompt({
         name: 'options',
@@ -46,6 +47,7 @@ function start() {
 }
 start()
 
+// Functions to view and/or manipulate database
 function viewAllDepts() {
     db.query('SELECT * FROM department', (err, result) => {
         if (err)

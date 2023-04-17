@@ -1,3 +1,4 @@
+-- Inserted initial data into tables
 INSERT INTO department (name) VALUES
 ('Sales'),
 ('Engineering'), 
