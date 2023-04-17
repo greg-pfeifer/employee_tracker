@@ -94,7 +94,7 @@ function addDept() {
         })
     }
     )}
-    
+
 function addRole() {
     inquirer.prompt([
         {
@@ -163,5 +163,30 @@ function addEmp() {
                 console.table(result)
             })
         })
+    })
+}
+
+function updateRole() {
+    inquirer.prompt([
+        {
+            name: 'update_name',
+            type: 'input',
+            message: 'What is the first name of the employee whose role you want to update?'
+        },
+        {
+            name: 'update_role',
+            type: 'input',
+            message: 'What is the new role ID of the employee?'
+        }
+    ]).then((answer) => {
+        db.query('UPDATE employee SET role_id = ? WHERE first_name = ?', [answer.update_name, answer.update_role], function (err, result) {
+            if (err)
+            throw err
+            db.query(`SELECT * FROM employee`, (err, result) => {
+                if (err)
+                    throw err
+                console.table(result)
+            }) 
+        })        
     })
 }
