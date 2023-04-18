@@ -8,7 +8,7 @@ This project was completed for the purpose of creating an employee database with
 
 ## Usage
 
-Start the application by running typing "node server.js" in the terminal.
+Start the application by typing "node server.js" in the terminal.
 
 ## License
 
