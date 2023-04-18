@@ -47,7 +47,7 @@ function start() {
 }
 start()
 
-// Functions to view and/or manipulate database
+// View all departments
 function viewAllDepts() {
     db.query('SELECT * FROM department', (err, result) => {
         if (err)
@@ -57,6 +57,7 @@ function viewAllDepts() {
     })
 }
 
+// View all roles
 function viewAllRoles() {
     db.query('SELECT * FROM role', (err, result) => {
         if (err)
@@ -66,6 +67,7 @@ function viewAllRoles() {
     })
 }
 
+// View all employees
 function viewAllEmps() {
     db.query('SELECT * FROM employee', (err, result) => {
         if (err)
@@ -75,6 +77,7 @@ function viewAllEmps() {
     })
 }
 
+// Add a department
 function addDept() {
     inquirer.prompt({
         name: 'dept_add',
@@ -97,6 +100,7 @@ function addDept() {
     }
     )}
 
+// Add a role
 function addRole() {
     inquirer.prompt([
         {
@@ -130,6 +134,7 @@ function addRole() {
     })
 }
 
+// Add an employee
 function addEmp() {
     inquirer.prompt([
         {
@@ -168,6 +173,7 @@ function addEmp() {
     })
 }
 
+// Update an existing role
 function updateRole() {
     inquirer.prompt([
         {
